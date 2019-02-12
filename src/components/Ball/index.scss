@@ -1,0 +1,169 @@
+$prize-size: 50%;
+$prize-margin: 0.97;
+
+
+.ball{
+    position: relative;
+    max-width:33%;
+    > img {
+        max-width:100%;
+    }
+    .fog{
+        position: absolute;
+        mix-blend-mode: lighten;
+    }
+    .balls {
+        width:100px;
+        height:100px;
+        overflow:visible;
+        position: absolute;
+        top: 30%;
+        left: calc(50% - 40px);
+        z-index:3;
+        transition-property: opacity;
+        img.hide {
+            transition-property: opacity;
+            transition-duration: 0.3s;
+            transition-timing-function: ease-out;
+            opacity:0;
+        }
+        img {
+            opacity:1;
+            position: absolute;
+
+        }
+    }
+}
+
+.closed {
+    opacity:1;
+    transition-duration: 0.5s;
+    transition-property: opacity;
+    transition-timing-function: ease-out;
+    img {
+        max-width:100%;
+    }
+    .hide {
+        opacity:0;
+        transition-duration: 0.3;
+    }
+    }
+  
+    .hide {
+        opacity:0;
+    }
+    
+    .show{
+        opacity:1;
+        transition-duration: 0s;
+        transition-property: opacity;
+        transition-timing-function: ease-in;
+    }
+    
+    .show.fog {
+        transition-duration: 0s;
+    }
+
+    .open {
+    top:-45%;
+    left:6px;
+    opacity:1;
+    display:flex;
+    pointer-events: none;
+    flex-direction: column;
+    flex:0;
+    position: absolute;
+    img {
+        align-self:center;
+        max-width:100%;
+        margin-bottom:20px;
+    }
+    .fog {
+        transform: rotateX(0.01deg);
+        width: 130%;
+        max-width:150%;
+        height: 75%;
+        left: -17%;
+        mix-blend-mode: lighten;
+    }
+    .prize-wrapper {
+        z-index:2;
+        width:$prize-size;
+        padding-top:$prize-size;
+        height:0;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:calc(50% - #{$prize-size*1.2/2});
+        left:calc(50% - #{$prize-size/2});
+        background: #0cbbc2;
+        border-radius: 100%;
+        filter: blur(4px);
+        transition-property: margin-top, transform;
+        transform: scale(0.1);
+        margin-top: 80px;
+    }
+    .prize {
+        transform: scale(0.1);
+        margin-top: 80px;
+        transition-property: margin-top, transform;
+        filter: blur(0px);
+        background-color:#292c2e;
+        z-index:2;
+        width:$prize-size * $prize-margin;
+        padding-top:$prize-size * $prize-margin;
+        height:0;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:calc( 50% - #{$prize-size*1.24/2 *$prize-margin} );
+        left:calc( 50% - #{$prize-size/2 * $prize-margin} );
+        background: #292c2e;
+        border-radius: 100%;
+        font-size:2rem;
+        color:#fff;
+        line-height:2.1rem;
+        text-align:center;
+        font-family: 'Source sans Pro', sans-serif;
+        b {
+        font-weight: bold;
+        display:inline;
+        }
+        p {
+            position:absolute;
+            height:100%;
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-size: 60%;
+            line-height:1.2rem;
+            top:0;
+            margin:0;
+        }
+    }
+
+    .animatePrize {
+        margin-top:0;
+        transform: scale(1);
+        transition-duration: 0.3s;
+        transition-timing-function: ease-in;
+    }
+}
+
+.box-top-half {
+    &.hide {
+        display:none;
+    }
+    &.show {
+        display:block;
+        position: absolute;
+        top:0;
+        transition-duration: 0.3s;
+    }
+}
+
+

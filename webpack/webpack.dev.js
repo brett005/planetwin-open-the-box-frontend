@@ -7,7 +7,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: commonPaths.outputPath,
-    chunkFilename: '[name].js',
+    chunkFilename: '[name].js'
   },
   module: {
     rules: [
@@ -21,18 +21,18 @@ module.exports = {
               sourceMap: true,
               modules: true,
               camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
+              localIdentName: '[local]'
+            }
           },
-          'sass-loader',
-        ],
-      },
-    ],
+          'sass-loader'
+        ]
+      }
+    ]
   },
   devServer: {
-    contentBase: commonPaths.outputPath,
+    contentBase: [commonPaths.outputPath, './public'],
     compress: true,
-    hot: true,
+    hot: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()],
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 };

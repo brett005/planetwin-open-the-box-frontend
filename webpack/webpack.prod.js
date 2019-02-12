@@ -5,9 +5,9 @@ const commonPaths = require('./paths');
 module.exports = {
   mode: 'production',
   output: {
-    filename: `${commonPaths.jsFolder}/[name].[hash].js`,
+    filename: `${commonPaths.jsFolder}/[name].js`,
     path: commonPaths.outputPath,
-    chunkFilename: '[name].[chunkhash].js',
+    chunkFilename: '[name].js'
   },
   module: {
     rules: [
@@ -21,22 +21,22 @@ module.exports = {
               sourceMap: false,
               modules: true,
               camelCase: true,
-              localIdentName: '[local]___[hash:base64:5]',
-            },
+              localIdentName: '[local]'
+            }
           },
-          'sass-loader',
-        ],
-      },
-    ],
+          'sass-loader'
+        ]
+      }
+    ]
   },
   plugins: [
     new CleanWebpackPlugin([commonPaths.outputPath.split('/').pop()], {
-      root: commonPaths.root,
+      root: commonPaths.root
     }),
     new MiniCssExtractPlugin({
       filename: `${commonPaths.cssFolder}/[name].css`,
-      chunkFilename: '[id].css',
-    }),
+      chunkFilename: '[id].css'
+    })
   ],
-  devtool: 'source-map',
+  devtool: 'source-map'
 };

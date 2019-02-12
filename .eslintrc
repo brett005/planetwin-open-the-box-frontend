@@ -1,7 +1,6 @@
 {
   "parser": "babel-eslint",
-  "plugins": ["react", "jest", "prettier"],
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["react", "jest"],
   "globals": {
     "React": true,
     "document": true,
@@ -13,6 +12,9 @@
   },
   "root": true,
   "rules": {
+    "semi": "off",
+    "arrow-parens": "off",
+    "no-underscore-dangle": "off",
     "indent": ["error", 2],
     "react/prefer-stateless-function": "warn",
     "react/self-closing-comp": [
@@ -43,12 +45,18 @@
     "jest/valid-expect": "error",
     "react/require-default-props": 0,
     "jsx-a11y/href-no-hash": "off",
-    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
     "react/jsx-boolean-value": ["warn", "never"],
     "react/jsx-closing-bracket-location": ["warn", "after-props"],
     "react/jsx-curly-spacing": ["warn", "never"],
     "react/jsx-filename-extension": ["warn", { "extensions": [".jsx"] }],
     "react/jsx-first-prop-new-line": ["warn", "multiline"],
+    "react/jsx-one-expression-per-line" : "off",
+    "arrow-body-style": "off",
+    "no-unused-vars": "off",
+    "no-param-reassign": "off",
+    "class-methods-use-this": "off",
+    "react/destructuring-assignment": "off",
+    "operator-linebreak": "off",
     "react/jsx-handler-names": [
       "warn",
       {
